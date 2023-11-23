@@ -9,45 +9,63 @@ if loop to match computer and player choices
 display outcome
 */
 
-let x = Math.floor(Math.random() * 3) + 1; /* This gives me three possible choices 1, 2, or 3 */
-
-let randomGuess;
-
-if (x === 1) {
-    randomGuess = "Rock";
-} else if (x === 2) {
-    randomGuess = "Paper";
-} else {
-    randomGuess = "Scissors";
-}
-console.log("Computer Chooses", randomGuess);
-
-let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
-
-let playerChoice = playerInput.toLowerCase();
-
-if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors") {
-    console.log("You Choose:", playerChoice);
-} else {
-    alert("Maybe you can't spell?");
+const getUserChoice = userInput => {
+    userInput = userInput.toLowerCase();
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+        return userInput;
+    } else {
+        console.log('Please type: rock, paper, or scissors.');
+    }
 }
 
+ const getComputerChoice = () => {
+    const randomNumber = Math.floor(Math.random() * 3);
+    switch (randomNumber) {
+        case 0:
+            return 'rock';
+        case 1:
+            return 'paper';
+        case 2:
+            return 'scissors';
+    }
+};
 
-if (playerChoice === randomGuess) {
-    console.log("It's a Tie Game!!!");
-} else if (playerChoice === "rock" && randomGuess === "paper") {
-    console.log("Computer Wins");
-} else if (playerChoice === "rock" && randomGuess === "scissors") {
-    console.log("You Win!");
-} else if (playerChoice === "paper" && randomGuess === "rock") {
-    console.log("You Win!");
-} else if (playerChoice === "paper" && randomGuess ==="scissors") {
-    console.log("Computer Wins");
-} else if (playerChoice === "scissors" && randomGuess === "paper") {
-    console.log("You Win!");
-} else if (playerChoice === "scissors" && randomGuess === "rock") {
-    console.log("Computer Wins");
+const determineWinner = (userChoice, computerChoice) => {
+    if (userChoice === computerChoice) {
+        return 'This game is a tie!';
+    }
+
+    if (userChoice === 'rock') {
+        if (computerChoice === 'paper') {
+            return 'You Lost...';
+        } else {
+            return 'Yay! You Won!!!';
+        }
+    }
+
+    if (userChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+            return 'You Lost...';
+        } else {
+            return 'Yay! You Won!!!';
+        }
+    }
+
+    if (userChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+            return 'You Lost...';
+        } else {
+            return 'Yay! You Won!!!';
+        }
+    }
 }
-    
+const playGame = () => {
+    const userChoice = getUserChoice('paper');
+    const computerChoice = getComputerChoice();
+    console.log('You picked: ' + userChoice);
+    console.log('The computer picked: ' + computerChoice);
 
+    console.log(determineWinner(userChoice, computerChoice));
+}
 
+playGame()
