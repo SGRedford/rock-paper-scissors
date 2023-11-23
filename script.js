@@ -23,3 +23,12 @@ if (x === 1) {
 }
 console.log(randomGuess);
 
+let playerInput = prompt("Please enter Rock, Paper, or Scissors:");
+
+let playerChoice = playerInput.toLowerCase();
+
+if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors") {
+    console.log("You Choose:", playerChoice);
+} else {
+    console.log("Maybe you can't spell?");
+}
