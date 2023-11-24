@@ -1,28 +1,5 @@
 /* Rock Paper Scissors Project */
 
-/* Pseudocode:
-Set up computer guess random number
-direct the number to a guess string
-make var for storing the guess
-set up player choice
-if loop to match computer and player choices
-display outcome
-*/
-/*
-    
-}
-const playGame = () => {
-    const userChoice = getUserChoice('paper');
-    const computerChoice = getComputerChoice();
-    console.log('You picked: ' + userChoice);
-    console.log('The computer picked: ' + computerChoice);
-
-    console.log(determineWinner(userChoice, computerChoice));
-}
-
-playGame() */ 
-
-
 
 function getComputerChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
@@ -49,12 +26,10 @@ function getPlayerChoice() {
     }
 }
 
-console.log(getPlayerChoice());
-console.log(getComputerChoice()); 
 
 function playRound(getPlayerChoice, getComputerChoice) {
     if (getPlayerChoice === getComputerChoice){
-    return 'It's a tie game';
+    return 'It\'s a tie game';
     } 
 
     if (getPlayerChoice === 'rock') {
@@ -85,4 +60,7 @@ function playRound(getPlayerChoice, getComputerChoice) {
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
+
+console.log('You Picked:' + playerSelection);
+console.log('Computer Picked:' + computerSelection);
 console.log(playRound(playerSelection, computerSelection));
