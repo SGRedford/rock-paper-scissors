@@ -8,7 +8,7 @@ set up player choice
 if loop to match computer and player choices
 display outcome
 */
-
+/*
     
 }
 const playGame = () => {
@@ -20,7 +20,7 @@ const playGame = () => {
     console.log(determineWinner(userChoice, computerChoice));
 }
 
-playGame() */
+playGame() */ 
 
 
 
