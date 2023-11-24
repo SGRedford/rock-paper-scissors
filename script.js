@@ -8,56 +8,8 @@ set up player choice
 if loop to match computer and player choices
 display outcome
 */
-/*
-const getUserChoice = userInput => {
-    userInput = userInput.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
-        return userInput;
-    } else {
-        console.log('Please type: rock, paper, or scissors.');
-    }
-}
 
- const getComputerChoice = () => {
-    const randomNumber = Math.floor(Math.random() * 3);
-    switch (randomNumber) {
-        case 0:
-            return 'rock';
-        case 1:
-            return 'paper';
-        case 2:
-            return 'scissors';
-    }
-};
-
-const determineWinner = (userChoice, computerChoice) => {
-    if (userChoice === computerChoice) {
-        return 'This game is a tie!';
-    }
-
-    if (userChoice === 'rock') {
-        if (computerChoice === 'paper') {
-            return 'You Lost...';
-        } else {
-            return 'Yay! You Won!!!';
-        }
-    }
-
-    if (userChoice === 'paper') {
-        if (computerChoice === 'scissors') {
-            return 'You Lost...';
-        } else {
-            return 'Yay! You Won!!!';
-        }
-    }
-
-    if (userChoice === 'scissors') {
-        if (computerChoice === 'rock') {
-            return 'You Lost...';
-        } else {
-            return 'Yay! You Won!!!';
-        }
-    }
+    
 }
 const playGame = () => {
     const userChoice = getUserChoice('paper');
@@ -98,12 +50,39 @@ function getPlayerChoice() {
 }
 
 console.log(getPlayerChoice());
-console.log(getComputerChoice());
+console.log(getComputerChoice()); 
 
-/*function playRound(playerSelection, computerSelection) {
+function playRound(getPlayerChoice, getComputerChoice) {
+    if (getPlayerChoice === getComputerChoice){
+    return 'It's a tie game';
+    } 
 
+    if (getPlayerChoice === 'rock') {
+        if (getComputerChoice === 'paper') {
+            return 'You Lost...';
+        } else {
+            return 'Yay! You Won!!!';
+        }
+    }
+
+    if (getPlayerChoice === 'paper') {
+        if (getComputerChoice === 'scissors') {
+            return 'You Lost...';
+        } else {
+            return 'Yay! You Won!!!';
+        }
+    }
+
+    if (getPlayerChoice === 'scissors') {
+        if (getComputerChoice === 'rock') {
+            return 'You Lost...';
+        } else {
+            return 'Yay! You Won!!!';
+        }
+    }
 }
+
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection)); */
+console.log(playRound(playerSelection, computerSelection));
