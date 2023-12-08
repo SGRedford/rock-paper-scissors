@@ -1,0 +1,68 @@
+
+
+* {
+    font-family: monospace;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;  
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_area {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.cardbox {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.cards {
+    padding: 10px;
+}
+
+button {
+    display: flex;
+    padding: 50px;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 15px;
+    width: 75px;
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    display: flex;
+    flex: auto;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
+    max-height: 50px;
+}
+
+
+
