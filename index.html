@@ -17,16 +17,16 @@
     <div class="game_area">
         <h2>Try your luck, and make a selection below.  Best to five wins!</h2>
             <div class="cardbox">
-                <div class="cards"><button class="rock_btn">Rock</button></div>
-                <div class="cards"><button class="paper_btn">Paper</button></div>
-                <div class="cards"><button class="scissor_btn">Scissors</button></div>
+                <div class="cards"><button onclick="play('rock')">Rock</button></div>
+                <div class="cards"><button onclick="play('paper')">Paper</button></div>
+                <div class="cards"><button onclick="play('scissors')">Scissors</button></div>
             </div>
-            <div class="gameinfo">
-                <div><h3 class="score">Player Count:</h3><input id="playercount"></div>
-                <div><h3 class="score">Computer Count:</h3><input id="computercount"></div>
+            <div class="score">
+                <div><h3>Player: <span class="playerScore">0</h3></div>
+                <div><h3>Computer: <span class="computerScore">0</h3></div>
             </div>
             <div>
-                <h2 id="whowins"></h2>
+                <h2 id="result"></h2>
             </div>
     </div>
 
